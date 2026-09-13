@@ -12,6 +12,8 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="cursor-glow" aria-hidden="true"></div>
+
   <header class="site-header">
     <a class="brand" href="#top">DDL</a>
     <nav class="nav" aria-label="Primary navigation">
@@ -24,18 +26,34 @@
   </header>
 
   <main id="top">
-    <section class="hero section-shell">
-      <div class="eyebrow">Civil Engineering · Estimating · AI-Assisted Workflows</div>
-      <h1>I turn <span>drawings, data, and repeatable work</span> into clearer systems.</h1>
-      <p class="hero-copy">
-        I’m Dingcheng David Liang, an Engineer-in-Training and LEED Green Associate based in Edmonton.
-        My background spans construction estimating, coordination, design, automation, and community projects.
-        I’m especially interested in practical ways to combine engineering judgment with AI and better workflows.
-      </p>
-      <div class="hero-actions">
-        <a class="button primary" href="#work">Explore my work</a>
-        <a class="button secondary" href="#experience">View experience</a>
+    <section class="hero section-shell hero-layout">
+      <div class="hero-copy-wrap">
+        <div class="eyebrow">Civil Engineering · Estimating · AI-Assisted Workflows</div>
+        <h1>I turn <span>drawings, data, and repeatable work</span> into clearer systems.</h1>
+        <p class="hero-copy">
+          I’m Dingcheng David Liang, an Engineer-in-Training and LEED Green Associate based in Edmonton.
+          My background spans construction estimating, coordination, design, automation, and community projects.
+          I’m especially interested in practical ways to combine engineering judgment with AI and better workflows.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#work">Explore my work</a>
+          <a class="button secondary" href="#experience">View experience</a>
+        </div>
       </div>
+
+      <div class="orb-stage" aria-label="Interactive digital twin visualization">
+        <div class="orb-shell" id="orbShell">
+          <div class="orb-grid"></div>
+          <div class="orb-core" id="orbCore"></div>
+          <span class="orb-node node-a">AI</span>
+          <span class="orb-node node-b">EST</span>
+          <span class="orb-node node-c">CAD</span>
+          <span class="orb-node node-d">OPS</span>
+          <span class="orb-node node-e">DATA</span>
+        </div>
+        <p class="orb-caption">Move your cursor — the system follows.</p>
+      </div>
+
       <div class="hero-meta" aria-label="Current focus areas">
         <div><strong>Engineering</strong><span>Construction, design & coordination</span></div>
         <div><strong>Estimating</strong><span>Takeoff, pricing & drawing interpretation</span></div>
@@ -50,7 +68,8 @@
       </div>
 
       <div class="project-grid">
-        <article class="project-card featured">
+        <article class="project-card featured tilt-card">
+          <div class="card-light" aria-hidden="true"></div>
           <div class="project-topline"><span>Estimating</span><span>AI Workflow</span></div>
           <h3>Leonardo</h3>
           <p>
@@ -64,7 +83,8 @@
           <span class="project-link muted">Detailed case study coming next</span>
         </article>
 
-        <article class="project-card">
+        <article class="project-card tilt-card">
+          <div class="card-light" aria-hidden="true"></div>
           <div class="project-topline"><span>Community</span><span>Operations</span></div>
           <h3>OpenMind</h3>
           <p>
@@ -76,7 +96,8 @@
           </ul>
         </article>
 
-        <article class="project-card">
+        <article class="project-card tilt-card">
+          <div class="card-light" aria-hidden="true"></div>
           <div class="project-topline"><span>Automation</span><span>Productivity</span></div>
           <h3>Excel & estimating automation</h3>
           <p>
@@ -113,39 +134,59 @@
       </div>
     </section>
 
-    <section id="skills" class="section-shell section-block split-section">
+    <section id="skills" class="section-shell section-block split-section skills-interactive">
       <div class="section-heading sticky-copy">
         <p class="kicker">Capabilities</p>
         <h2>A skill set built around making work more accurate, visual, and repeatable.</h2>
         <p>
-          Over time, this portfolio will connect each capability to project evidence rather than simply listing software names.
+          Hover the map to explore how the skills connect. Over time, each node can link to project evidence rather than simply list software names.
         </p>
       </div>
-      <div class="skill-groups">
-        <div class="skill-group">
-          <span class="skill-index">01</span>
-          <div><h3>Construction Estimating</h3><p>Quantity takeoffs · Architectural drawings · Cost estimates · Bid preparation · Scope review</p></div>
+
+      <div>
+        <div class="constellation" id="constellation" aria-label="Interactive skill constellation">
+          <svg class="constellation-lines" viewBox="0 0 800 520" preserveAspectRatio="none" aria-hidden="true">
+            <line x1="400" y1="250" x2="150" y2="120" />
+            <line x1="400" y1="250" x2="640" y2="110" />
+            <line x1="400" y1="250" x2="670" y2="385" />
+            <line x1="400" y1="250" x2="170" y2="400" />
+            <line x1="150" y1="120" x2="640" y2="110" />
+            <line x1="170" y1="400" x2="670" y2="385" />
+          </svg>
+          <button class="skill-node center" data-skill="Systems" style="--x:50%;--y:48%">SYSTEMS</button>
+          <button class="skill-node" data-skill="Estimating" style="--x:18%;--y:22%">ESTIMATING</button>
+          <button class="skill-node" data-skill="Engineering" style="--x:80%;--y:20%">ENGINEERING</button>
+          <button class="skill-node" data-skill="Automation" style="--x:84%;--y:74%">AUTOMATION</button>
+          <button class="skill-node" data-skill="Visualization" style="--x:20%;--y:78%">VISUALIZATION</button>
+          <div class="skill-readout" id="skillReadout">Move across the constellation.</div>
         </div>
-        <div class="skill-group">
-          <span class="skill-index">02</span>
-          <div><h3>Engineering & Design</h3><p>AutoCAD · Revit · Civil 3D · Bluebeam · Navisworks · S-Frame · HEC-RAS · ArcGIS</p></div>
-        </div>
-        <div class="skill-group">
-          <span class="skill-index">03</span>
-          <div><h3>Automation & AI</h3><p>Excel automation · AI-assisted estimating · Structured workflows · Python · MATLAB · QA logic</p></div>
-        </div>
-        <div class="skill-group">
-          <span class="skill-index">04</span>
-          <div><h3>Visualization & Drafting</h3><p>SketchUp · 3D Max · Technical drawings · Floor plans · Material communication</p></div>
-        </div>
-        <div class="skill-group">
-          <span class="skill-index">05</span>
-          <div><h3>Communication & Community</h3><p>English · Mandarin · Cantonese · Sponsorship · Events · Cross-functional collaboration</p></div>
+
+        <div class="skill-groups">
+          <div class="skill-group">
+            <span class="skill-index">01</span>
+            <div><h3>Construction Estimating</h3><p>Quantity takeoffs · Architectural drawings · Cost estimates · Bid preparation · Scope review</p></div>
+          </div>
+          <div class="skill-group">
+            <span class="skill-index">02</span>
+            <div><h3>Engineering & Design</h3><p>AutoCAD · Revit · Civil 3D · Bluebeam · Navisworks · S-Frame · HEC-RAS · ArcGIS</p></div>
+          </div>
+          <div class="skill-group">
+            <span class="skill-index">03</span>
+            <div><h3>Automation & AI</h3><p>Excel automation · AI-assisted estimating · Structured workflows · Python · MATLAB · QA logic</p></div>
+          </div>
+          <div class="skill-group">
+            <span class="skill-index">04</span>
+            <div><h3>Visualization & Drafting</h3><p>SketchUp · 3D Max · Technical drawings · Floor plans · Material communication</p></div>
+          </div>
+          <div class="skill-group">
+            <span class="skill-index">05</span>
+            <div><h3>Communication & Community</h3><p>English · Mandarin · Cantonese · Sponsorship · Events · Cross-functional collaboration</p></div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section-shell section-block research-panel">
+    <section class="section-shell section-block research-panel blueprint-panel">
       <div>
         <p class="kicker">Education & involvement</p>
         <h2>Engineering foundation with a strong interest in sustainability and professional growth.</h2>
