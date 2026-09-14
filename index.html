@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="open.css" />
+  <link rel="stylesheet" href="little-david.css" />
 </head>
 <body>
   <header class="site-header section-shell">
@@ -158,6 +159,39 @@
     <span>© <span id="year"></span> Dingcheng David Liang</span>
     <span>Creative Problem Solver</span>
   </footer>
+
+  <button class="assistant-fab" id="assistantFab" aria-label="Open Little David assistant" aria-expanded="false">
+    <span class="assistant-bubble">Ask Little David</span>
+    <span class="assistant-avatar" id="assistantAvatar">
+      <img alt="Little David" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABUOEBIQDRUSERIYFhUZHzQiHx0dH0AuMCY0TENQT0tDSUhUXnlmVFlyWkhJaY9qcnyAh4iHUWWUn5ODnXmEh4L/2wBDARYYGB8cHz4iIj6CVklWgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoL/wgARCABIAEgDASIAAhEBAxEB/8QAGQAAAwEBAQAAAAAAAAAAAAAAAAMEAgEF/8QAGAEAAwEBAAAAAAAAAAAAAAAAAQIEAwD/2gAMAwEAAhADEAAAAasM89n2qJyjusJ7vU6iiqfgBFXkev48Nt1qfPXrYuqbm1KfVJg0OtMlfI7JV35RkJZk83veUx8Oj5sHriuzvDGGJ95TTDnI2wyONsWqCOud4Ex1gNMvA4sA5f/EAB8QAAICAgMBAQEAAAAAAAAAAAECAAMREhAhIiAEMf/aAAgBAQABBQKHqG1RDaDHzEs+b53BS8Nbifw1PsOD0LD6/NUMGWYAYBxQOSMhxm1cJWbCXsyQoMrGvxZVuVq86YJHkAZx8jAjKYy2xE1+GPWcCdwsITKiYeF6B9QEbOeqm3TWBQqluwuQT5PQjnxS2q1tsTlyqqOP/8QAHREAAgICAwEAAAAAAAAAAAAAAAECEBEhAxJBMf/aAAgBAwEBPwHAkNDrynsnp2nXI8uvpjdTjk6MR6SiuuR1/8QAHREAAgICAwEAAAAAAAAAAAAAAAECERASICExQf/aAAgBAgEBPwHahyZGVCd4+noiL64wXWLaG7WISo3jy//EACIQAAIBBAEEAwAAAAAAAAAAAAABERAgITFREjJBYSIwcf/aAAgBAQAGPwKvBMmbd01TJFjOt0ycO5GGxPxSLE1gz3I0dJAnbvZhwzvherfjkXV9PKIIPyzg9k+aTTUIhV//xAAhEAEAAgIBBAMBAAAAAAAAAAABABEhQTEQUWFxIIGhwf/aAAgBAQABPyFiBbDNsMKafsQT6It1ac9aieMKlrBfqJzeZR5iNApmQGTfVWLH5PuNAWvHiCZ1ep2qd9zA9x63J4mI7sVI8zKB7Y8xtiBM7jC2/hcARGWK1r2ReF35I4Mca5YPBnsxs+D4rnGkZnyEpVT987xV2/DI5Iliq4glMLageZnxMh1dVCDjh6DIvMeldiEDz/JxUBBzaotaNyjE4hn3MtCOCGxFkAeE3ct9MJlHMdnAIdN2zGhdbZl44n//2gAMAwEAAgADAAAAEDW+qT8jiEfliId863qjvAoX/A//xAAcEQADAAIDAQAAAAAAAAAAAAAAAREQITFBUWH/2gAIAQMBAT8QdiLpF+UJHMfAtMvQR7ClhDQm+YNj5jlEUgktnRGvoU6CjIeMf//EABoRAAMAAwEAAAAAAAAAAAAAAAABERAhQVH/2gAIAQIBAT8QJpbYxtMUlWGGhKFPQpKh3pF6Qr3C2BYWMq2J3RunDosf/8QAJBABAAMAAwACAgEFAAAAAAAAAQARITFBUWGBcaGRELHB0fH/2gAIAQEAAT8QEYJRLkG3RAx7LaIflCrN2h/v2VDr5yFCyV/TTRHqqOg7FnE9NwkAfnI/aCzZYhDiMfDsiSoaJA8hn4PY5PiFy0D9PuVL5HgVuAtYoXsGSkGzzL6RIk2OrRcIqtaXBERFgc1N9S2LJ/GEdJoCtgmfxGSsw+VLQXlPQrIkSM40wVLli4FXZ1bKzdtDR/2XMqeJ+S/zAr470z5qBwiUlRIwaZoAtS+bXIiLCwpdfUu6h0UfkvN/cCz3ZLai4eEuMcq/OFh+YRRn9/4joBHpiFdAawSmjWCcwVJq+/JrFbgtuEXAWHkuW78C5VfUUYub2l0Ac3LeQB45wQJhM7/UOHaqIOS2uf7ysAANpCJm+O7+oaKaWbvkvFvBV3BTTbu4QW4TR6RHR8+yj6iN2+48uPoB5DEo5wXh0O2f/9k=" />
+      <span class="eye-overlay left"><span class="pupil"></span></span>
+      <span class="eye-overlay right"><span class="pupil"></span></span>
+    </span>
+  </button>
+
+  <aside class="assistant-panel" id="assistantPanel" hidden>
+    <div class="assistant-panel-header">
+      <div>
+        <p class="assistant-overline">Little David</p>
+        <h3>Ask me about David.</h3>
+      </div>
+      <button class="assistant-close" id="assistantClose" aria-label="Close assistant">×</button>
+    </div>
+    <div class="assistant-messages" id="assistantMessages">
+      <div class="message assistant">Hi — I’m Little David. I can give you a quick tour of David’s projects, experience, and what he wants to build next. I’m the compact version, so I try not to overcomplicate things.</div>
+    </div>
+    <div class="assistant-quick" id="assistantQuick">
+      <button type="button" data-question="Who is David?">Who is David?</button>
+      <button type="button" data-question="What is Leonardo?">What is Leonardo?</button>
+      <button type="button" data-question="Why OpenMind?">Why OpenMind?</button>
+      <button type="button" data-question="What experience does he have?">Experience</button>
+      <button type="button" data-question="What is he looking for next?">What’s next?</button>
+    </div>
+    <form class="assistant-form" id="assistantForm">
+      <input type="text" id="assistantInput" placeholder="Ask something about David…" autocomplete="off" />
+      <button type="submit">Send</button>
+    </form>
+  </aside>
 
   <script src="script.js"></script>
 </body>
