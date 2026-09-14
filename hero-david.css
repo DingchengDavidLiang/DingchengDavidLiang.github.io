@@ -61,5 +61,6 @@ section[id]{scroll-margin-top:32px}
 }
 @media(max-height:580px) and (min-width:761px){.hero{min-height:420px}.hero-copy-wrap{top:22%}.hero h1{font-size:16vh}.hero-name{margin-top:14px}.hero-crown{display:none}.hero-hello{bottom:75px}}
 @media(max-height:600px){.assistant-panel{bottom:12px;right:128px;width:min(390px,calc(100vw - 148px));max-height:calc(100dvh - 24px)}.assistant-quick{gap:4px}.assistant-messages{max-height:120px}}
+@media(max-height:650px) and (max-width:599px){.assistant-panel{left:12px;right:12px;bottom:12px;width:calc(100vw - 24px);max-height:calc(100dvh - 24px)}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.david-traveler{will-change:auto}.assistant-bubble{transition:none}.project-row:hover{transform:none}}
 .assistant-fab.guide-without-pet{height:44px}
