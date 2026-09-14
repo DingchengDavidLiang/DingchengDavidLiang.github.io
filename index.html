@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Dingcheng David Liang — creative problem solver working across engineering, automation, community, and useful ideas." />
-  <meta name="theme-color" content="#fff8ee" />
+  <meta name="theme-color" content="#547bea" />
   <title>Dingcheng David Liang</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,8 +12,11 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="open.css" />
   <link rel="stylesheet" href="little-david.css" />
+  <link rel="stylesheet" href="hero-david.css" />
+  <link rel="preload" href="assets/little-david-studio.png" as="image" />
 </head>
 <body>
+  <a class="skip-link" href="#intro">Skip to portfolio</a>
   <header class="site-header section-shell">
     <a class="brand" href="#top">DDL</a>
     <nav class="nav" aria-label="Primary navigation">
@@ -26,21 +29,17 @@
   </header>
 
   <main id="top">
-    <section class="hero section-shell">
-      <div class="hero-art" aria-hidden="true">
-        <div class="blob blob-a"></div>
-        <div class="blob blob-b"></div>
-        <div class="blob blob-c"></div>
-        <div class="wave-line wave-1"></div>
-        <div class="wave-line wave-2"></div>
-      </div>
-
+    <section class="hero" aria-labelledby="heroTitle">
       <div class="hero-copy-wrap">
-        <h1>Creative<br><span>for everything.</span></h1>
+        <svg class="hero-crown" viewBox="0 0 90 70" aria-hidden="true"><path d="m12 49 7-36 22 25 15-32 6 34 20-17-13 37Z"/></svg>
+        <h1 id="heroTitle">Be Creative<br><span>Be Smart</span></h1>
         <p class="hero-name">Dingcheng David Liang</p>
+        <span class="hero-underline" aria-hidden="true"></span>
       </div>
-
-      <a class="hero-scroll" href="#intro" aria-label="Scroll to introduction">Scroll to explore ↓</a>
+      <p class="hero-hello" aria-hidden="true">Hey!<br>Nice to see you here.</p>
+      <a class="hero-scroll" href="#intro">Scroll to explore <span aria-hidden="true">↓</span></a>
+      <p class="hero-hint">Move your cursor. I’m all eyes.</p>
+      <noscript><p class="hero-noscript">Meet David below. Enable JavaScript for Little David’s interactive tour.</p></noscript>
     </section>
 
     <div class="gradient-transition transition-one"></div>
@@ -160,24 +159,25 @@
     <span>Creative Problem Solver</span>
   </footer>
 
-  <button class="assistant-fab" id="assistantFab" aria-label="Open Little David assistant" aria-expanded="false">
-    <span class="assistant-bubble">Ask Little David</span>
-    <span class="assistant-avatar" id="assistantAvatar">
-      <img alt="Little David" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABUOEBIQDRUSERIYFhUZHzQiHx0dH0AuMCY0TENQT0tDSUhUXnlmVFlyWkhJaY9qcnyAh4iHUWWUn5ODnXmEh4L/2wBDARYYGB8cHz4iIj6CVklWgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoL/wgARCABIAEgDASIAAhEBAxEB/8QAGQAAAwEBAQAAAAAAAAAAAAAAAAMEAgEF/8QAGAEAAwEBAAAAAAAAAAAAAAAAAQIEAwD/2gAMAwEAAhADEAAAAasM89n2qJyjusJ7vU6iiqfgBFXkev48Nt1qfPXrYuqbm1KfVJg0OtMlfI7JV35RkJZk83veUx8Oj5sHriuzvDGGJ95TTDnI2wyONsWqCOud4Ex1gNMvA4sA5f/EAB8QAAICAgMBAQEAAAAAAAAAAAECAAMREhAhIiAEMf/aAAgBAQABBQKHqG1RDaDHzEs+b53BS8Nbifw1PsOD0LD6/NUMGWYAYBxQOSMhxm1cJWbCXsyQoMrGvxZVuVq86YJHkAZx8jAjKYy2xE1+GPWcCdwsITKiYeF6B9QEbOeqm3TWBQqluwuQT5PQjnxS2q1tsTlyqqOP/8QAHREAAgICAwEAAAAAAAAAAAAAAAECEBEhAxJBMf/aAAgBAwEBPwHAkNDrynsnp2nXI8uvpjdTjk6MR6SiuuR1/8QAHREAAgICAwEAAAAAAAAAAAAAAAECERASICExQf/aAAgBAgEBPwHahyZGVCd4+noiL64wXWLaG7WISo3jy//EACIQAAIBBAEEAwAAAAAAAAAAAAABERAgITFREjJBYSIwcf/aAAgBAQAGPwKvBMmbd01TJFjOt0ycO5GGxPxSLE1gz3I0dJAnbvZhwzvherfjkXV9PKIIPyzg9k+aTTUIhV//xAAhEAEAAgIBBAMBAAAAAAAAAAABABEhQTEQUWFxIIGhwf/aAAgBAQABPyFiBbDNsMKafsQT6It1ac9aieMKlrBfqJzeZR5iNApmQGTfVWLH5PuNAWvHiCZ1ep2qd9zA9x63J4mI7sVI8zKB7Y8xtiBM7jC2/hcARGWK1r2ReF35I4Mca5YPBnsxs+D4rnGkZnyEpVT987xV2/DI5Iliq4glMLageZnxMh1dVCDjh6DIvMeldiEDz/JxUBBzaotaNyjE4hn3MtCOCGxFkAeE3ct9MJlHMdnAIdN2zGhdbZl44n//2gAMAwEAAgADAAAAEDW+qT8jiEfliId863qjvAoX/A//xAAcEQADAAIDAQAAAAAAAAAAAAAAAREQITFBUWH/2gAIAQMBAT8QdiLpF+UJHMfAtMvQR7ClhDQm+YNj5jlEUgktnRGvoU6CjIeMf//EABoRAAMAAwEAAAAAAAAAAAAAAAABERAhQVH/2gAIAQIBAT8QJpbYxtMUlWGGhKFPQpKh3pF6Qr3C2BYWMq2J3RunDosf/8QAJBABAAMAAwACAgEFAAAAAAAAAQARITFBUWGBcaGRELHB0fH/2gAIAQEAAT8QEYJRLkG3RAx7LaIflCrN2h/v2VDr5yFCyV/TTRHqqOg7FnE9NwkAfnI/aCzZYhDiMfDsiSoaJA8hn4PY5PiFy0D9PuVL5HgVuAtYoXsGSkGzzL6RIk2OrRcIqtaXBERFgc1N9S2LJ/GEdJoCtgmfxGSsw+VLQXlPQrIkSM40wVLli4FXZ1bKzdtDR/2XMqeJ+S/zAr470z5qBwiUlRIwaZoAtS+bXIiLCwpdfUu6h0UfkvN/cCz3ZLai4eEuMcq/OFh+YRRn9/4joBHpiFdAawSmjWCcwVJq+/JrFbgtuEXAWHkuW78C5VfUUYub2l0Ac3LeQB45wQJhM7/UOHaqIOS2uf7ysAANpCJm+O7+oaKaWbvkvFvBV3BTTbu4QW4TR6RHR8+yj6iN2+48uPoB5DEo5wXh0O2f/9k=" />
-      <span class="eye-overlay left"><span class="pupil"></span></span>
-      <span class="eye-overlay right"><span class="pupil"></span></span>
-    </span>
+  <div class="david-stage" id="davidStage" aria-hidden="true">
+    <div class="david-traveler" id="davidTraveler" hidden>
+      <div class="david-shadow"></div>
+      <canvas id="davidCanvas" width="1024" height="1536"></canvas>
+    </div>
+  </div>
+  <button type="button" class="assistant-fab" id="assistantFab" aria-label="Ask Little David about David’s portfolio" aria-expanded="false" aria-controls="assistantPanel" hidden>
+    <span class="assistant-bubble">Ask Little David ↗</span>
   </button>
 
-  <aside class="assistant-panel" id="assistantPanel" hidden>
+  <aside class="assistant-panel" id="assistantPanel" role="dialog" aria-modal="false" aria-labelledby="assistantTitle" hidden>
     <div class="assistant-panel-header">
       <div>
         <p class="assistant-overline">Little David</p>
-        <h3>Ask me about David.</h3>
+        <h3 id="assistantTitle">Ask me about David.</h3>
       </div>
       <button class="assistant-close" id="assistantClose" aria-label="Close assistant">×</button>
     </div>
-    <div class="assistant-messages" id="assistantMessages">
+    <div class="assistant-messages" id="assistantMessages" role="log" aria-live="polite" aria-relevant="additions" aria-label="Conversation with Little David" tabindex="0">
       <div class="message assistant">Hi — I’m Little David. I can give you a quick tour of David’s projects, experience, and what he wants to build next. I’m the compact version, so I try not to overcomplicate things.</div>
     </div>
     <div class="assistant-quick" id="assistantQuick">
@@ -188,11 +188,14 @@
       <button type="button" data-question="What is he looking for next?">What’s next?</button>
     </div>
     <form class="assistant-form" id="assistantForm">
-      <input type="text" id="assistantInput" placeholder="Ask something about David…" autocomplete="off" />
+      <label class="sr-only" for="assistantInput">Your question about David</label>
+      <input type="text" maxlength="500" id="assistantInput" placeholder="Ask something about David…" autocomplete="off" />
       <button type="submit">Send</button>
     </form>
+    <p class="assistant-caption">A little portfolio guide · answers from this site.</p>
   </aside>
 
   <script src="script.js"></script>
+  <script src="hero-david.js"></script>
 </body>
 </html>

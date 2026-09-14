@@ -1,36 +1,6 @@
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-
-if (!reduceMotion && finePointer) {
-  const glow = document.querySelector('.cursor-glow');
-  window.addEventListener('pointermove', (event) => {
-    if (glow) {
-      glow.style.left = `${event.clientX}px`;
-      glow.style.top = `${event.clientY}px`;
-    }
-  }, { passive: true });
-
-  document.querySelectorAll('.tilt-card').forEach((card) => {
-    const light = card.querySelector('.card-light');
-    card.addEventListener('pointermove', (event) => {
-      const rect = card.getBoundingClientRect();
-      const x = event.clientX - rect.left;
-      const y = event.clientY - rect.top;
-      const px = x / rect.width - 0.5;
-      const py = y / rect.height - 0.5;
-      card.style.transform = `rotateX(${-py * 6}deg) rotateY(${px * 7}deg) translateY(-2px)`;
-      if (light) {
-        light.style.left = `${x}px`;
-        light.style.top = `${y}px`;
-      }
-    });
-    card.addEventListener('pointerleave', () => { card.style.transform = ''; });
-  });
-}
-
 const assistantFab = document.getElementById('assistantFab');
 const assistantPanel = document.getElementById('assistantPanel');
 const assistantClose = document.getElementById('assistantClose');
@@ -38,8 +8,6 @@ const assistantMessages = document.getElementById('assistantMessages');
 const assistantQuick = document.getElementById('assistantQuick');
 const assistantForm = document.getElementById('assistantForm');
 const assistantInput = document.getElementById('assistantInput');
-const assistantAvatar = document.getElementById('assistantAvatar');
-const pupils = Array.from(document.querySelectorAll('.pupil'));
 
 const answers = {
   who: "David is a creative problem solver with a civil-engineering background and hands-on experience across estimating, automation, community projects, and practical AI ideas. He likes understanding how something works, finding where it can work better, and turning that into something useful.",
@@ -56,13 +24,14 @@ function openAssistant() {
   if (!assistantPanel || !assistantFab) return;
   assistantPanel.hidden = false;
   assistantFab.setAttribute('aria-expanded', 'true');
-  setTimeout(() => assistantInput?.focus(), 80);
+  assistantInput?.focus({ preventScroll: true });
 }
 
 function closeAssistant() {
   if (!assistantPanel || !assistantFab) return;
   assistantPanel.hidden = true;
   assistantFab.setAttribute('aria-expanded', 'false');
+  assistantFab.focus({ preventScroll: true });
 }
 
 function addMessage(text, sender = 'assistant') {
@@ -122,23 +91,6 @@ if (assistantForm) {
     assistantInput.value = '';
     window.setTimeout(() => addMessage(getAnswer(question), 'assistant'), 220);
   });
-}
-
-if (!reduceMotion && finePointer && assistantAvatar && pupils.length) {
-  window.addEventListener('pointermove', (event) => {
-    const rect = assistantAvatar.getBoundingClientRect();
-    const cx = rect.left + rect.width / 2;
-    const cy = rect.top + rect.height / 2;
-    const dx = (event.clientX - cx) / Math.max(rect.width, 1);
-    const dy = (event.clientY - cy) / Math.max(rect.height, 1);
-    const maxX = 3.2;
-    const maxY = 2.6;
-    const tx = Math.max(-maxX, Math.min(maxX, dx * maxX));
-    const ty = Math.max(-maxY, Math.min(maxY, dy * maxY));
-    pupils.forEach((pupil) => {
-      pupil.style.transform = `translate(${tx}px, ${ty}px)`;
-    });
-  }, { passive: true });
 }
 
 document.addEventListener('keydown', (event) => {
