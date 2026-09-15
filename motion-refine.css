@@ -1,0 +1,157 @@
+/* Layered motion pass: subtle entrance/exit hierarchy without changing the portfolio layout. */
+
+.hero{
+  --hero-progress:0;
+  background-size:112% 112%;
+  background-position:calc(50% + var(--hero-progress) * 2%) calc(50% + var(--hero-progress) * 3%);
+  transition:background-position .08s linear;
+}
+
+.hero h1,
+.hero-name,
+.hero-crown,
+.hero-underline,
+.hero-hello,
+.hero-hint,
+.hero-scroll{
+  will-change:transform,opacity,filter;
+}
+
+.hero h1{
+  animation:hero-title-in 900ms cubic-bezier(.16,1,.3,1) 80ms both;
+}
+.hero-name{
+  animation:hero-detail-in 760ms cubic-bezier(.16,1,.3,1) 360ms both;
+}
+.hero-crown{
+  animation:hero-crown-in 820ms cubic-bezier(.16,1,.3,1) 520ms both;
+}
+.hero-underline{
+  transform-origin:left center;
+  animation:hero-line-in 680ms cubic-bezier(.16,1,.3,1) 610ms both;
+}
+.hero-hello{
+  animation:hero-side-in 720ms cubic-bezier(.16,1,.3,1) 620ms both;
+}
+.hero-hint{
+  animation:hero-side-in 720ms cubic-bezier(.16,1,.3,1) 760ms both;
+}
+.hero-scroll{
+  animation:hero-scroll-in 760ms cubic-bezier(.16,1,.3,1) 900ms both;
+}
+
+.david-traveler canvas{
+  image-rendering:auto;
+  backface-visibility:hidden;
+  transform-origin:50% 34%;
+  filter:contrast(1.025) saturate(1.035) drop-shadow(0 22px 36px rgba(34,26,54,.08));
+}
+.david-stage.character-ready .david-traveler canvas{
+  animation:david-arrive 920ms cubic-bezier(.16,1,.3,1) both;
+}
+
+.reveal-item{
+  opacity:0;
+  transform:translate3d(0,34px,0) scale(.992);
+  filter:blur(7px);
+  transition:
+    opacity 720ms cubic-bezier(.16,1,.3,1) var(--reveal-delay,0ms),
+    transform 820ms cubic-bezier(.16,1,.3,1) var(--reveal-delay,0ms),
+    filter 680ms ease var(--reveal-delay,0ms);
+  will-change:opacity,transform,filter;
+}
+.reveal-item.is-visible{
+  opacity:1;
+  transform:translate3d(0,0,0) scale(1);
+  filter:blur(0);
+}
+
+.project-row.reveal-item:nth-child(odd),
+.timeline article.reveal-item:nth-child(odd){
+  transform:translate3d(-28px,28px,0) scale(.994);
+}
+.project-row.reveal-item:nth-child(even),
+.timeline article.reveal-item:nth-child(even){
+  transform:translate3d(28px,28px,0) scale(.994);
+}
+.project-row.reveal-item.is-visible,
+.timeline article.reveal-item.is-visible{
+  transform:translate3d(0,0,0) scale(1);
+}
+
+.approach-grid article.reveal-item:nth-child(1),
+.approach-grid article.reveal-item:nth-child(3){transform:translate3d(-20px,26px,0) scale(.985)}
+.approach-grid article.reveal-item:nth-child(2),
+.approach-grid article.reveal-item:nth-child(4){transform:translate3d(20px,26px,0) scale(.985)}
+.approach-grid article.reveal-item.is-visible{transform:translate3d(0,0,0) scale(1)}
+
+.quote-strip p.reveal-item{
+  transform:translate3d(0,26px,0) scale(.985);
+  transform-origin:left center;
+}
+.quote-strip p.reveal-item.is-visible{transform:translate3d(0,0,0) scale(1)}
+
+.assistant-panel:not([hidden]){
+  animation:assistant-panel-in 360ms cubic-bezier(.16,1,.3,1) both;
+}
+.assistant-bubble{
+  animation:assistant-bubble-breathe 3.6s ease-in-out infinite;
+}
+
+@keyframes hero-title-in{
+  from{opacity:0;transform:translate3d(0,42px,0) scale(.965);filter:blur(8px)}
+  to{opacity:1;transform:translate3d(0,0,0) scale(1);filter:blur(0)}
+}
+@keyframes hero-detail-in{
+  from{opacity:0;transform:translate3d(0,18px,0);filter:blur(5px)}
+  to{opacity:1;transform:translate3d(0,0,0);filter:blur(0)}
+}
+@keyframes hero-crown-in{
+  0%{opacity:0;transform:translate3d(0,-18px,0) rotate(1deg) scale(.72)}
+  65%{opacity:1;transform:translate3d(0,4px,0) rotate(15deg) scale(1.08)}
+  100%{opacity:1;transform:translate3d(0,0,0) rotate(12deg) scale(1)}
+}
+@keyframes hero-line-in{
+  from{opacity:0;transform:rotate(-5deg) scaleX(.08)}
+  to{opacity:1;transform:rotate(-5deg) scaleX(1)}
+}
+@keyframes hero-side-in{
+  from{opacity:0;transform:translate3d(0,18px,0);filter:blur(5px)}
+  to{opacity:1;transform:translate3d(0,0,0);filter:blur(0)}
+}
+@keyframes hero-scroll-in{
+  0%{opacity:0;transform:translate3d(-50%,18px,0) scale(.96)}
+  100%{opacity:1;transform:translate3d(-50%,0,0) scale(1)}
+}
+@keyframes david-arrive{
+  from{opacity:0;transform:translate3d(0,26px,0) scale(.975);filter:contrast(1.025) saturate(1.035) blur(3px) drop-shadow(0 22px 36px rgba(34,26,54,.02))}
+  to{opacity:1;transform:translate3d(0,0,0) scale(1);filter:contrast(1.025) saturate(1.035) blur(0) drop-shadow(0 22px 36px rgba(34,26,54,.08))}
+}
+@keyframes assistant-panel-in{
+  from{opacity:0;transform:translate3d(0,14px,0) scale(.975);filter:blur(3px)}
+  to{opacity:1;transform:translate3d(0,0,0) scale(1);filter:blur(0)}
+}
+@keyframes assistant-bubble-breathe{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-3px)}
+}
+
+@media(max-width:760px){
+  .reveal-item{transform:translate3d(0,24px,0) scale(.994);filter:blur(4px)}
+  .project-row.reveal-item:nth-child(n),
+  .timeline article.reveal-item:nth-child(n),
+  .approach-grid article.reveal-item:nth-child(n){transform:translate3d(0,24px,0) scale(.994)}
+  .project-row.reveal-item.is-visible,
+  .timeline article.reveal-item.is-visible,
+  .approach-grid article.reveal-item.is-visible{transform:translate3d(0,0,0) scale(1)}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .hero h1,.hero-name,.hero-crown,.hero-underline,.hero-hello,.hero-hint,.hero-scroll,
+  .david-stage.character-ready .david-traveler canvas,.assistant-panel:not([hidden]),.assistant-bubble{
+    animation:none!important;
+  }
+  .reveal-item,.reveal-item.is-visible{
+    opacity:1!important;transform:none!important;filter:none!important;transition:none!important;
+  }
+}
