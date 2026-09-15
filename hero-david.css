@@ -1,0 +1,66 @@
+@font-face{font-family:'David Hand';src:url('assets/caveat-bold.ttf') format('truetype');font-weight:400 700;font-style:normal;font-display:swap}
+/* Full-bleed hero and one continuous Little David character. */
+.skip-link{position:fixed;left:16px;top:-80px;z-index:100;background:#191b22;color:#fff;padding:12px 18px;border-radius:8px}
+.skip-link:focus{top:12px}
+:focus-visible{outline:3px solid #6048d8;outline-offset:5px}
+section[id]{scroll-margin-top:32px}
+.site-header{position:absolute;left:var(--page-pad);right:var(--page-pad);width:auto;background:transparent;backdrop-filter:none;border:0;z-index:45}
+.site-header .brand{background:#fff;color:#252544}
+.site-header .nav a,.site-header .nav-link{color:#fff;text-shadow:0 1px 8px #17215055}
+.site-header a:focus-visible{outline-color:#fff}
+.hero{position:relative;width:100%;min-height:650px;height:100svh;padding:0;overflow:hidden;background:radial-gradient(ellipse at 5% 54%,#ffc592 0%,#e1a6b5 22%,transparent 52%),radial-gradient(ellipse at 50% 100%,#e2bce6,transparent 52%),linear-gradient(125deg,#8280c4 0%,#527fec 60%,#436acb 100%);isolation:auto}
+.hero::after{content:"";position:absolute;left:-5%;bottom:-65px;width:110%;height:100px;border-radius:50% 50% 0 0;background:#fff8ee;z-index:4;pointer-events:none}
+.hero-copy-wrap{position:absolute;right:var(--page-pad);left:auto;top:25%;width:31%;max-width:540px;z-index:3;pointer-events:none;color:white}
+.hero h1{font-family:'David Hand',cursive;font-size:clamp(62px,7.4vw,130px);font-weight:700;line-height:.95;letter-spacing:-.05em;text-wrap:balance}
+.hero h1 span{color:#fff;display:block}
+.hero-name{margin-top:30px;font-size:clamp(14px,1.6vw,24px);letter-spacing:.07em;font-weight:400}
+.hero-crown{width:64px;height:50px;margin:0 0 12px 62%;fill:none;stroke:#ffe069;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;transform:rotate(12deg)}
+.hero-underline{display:block;width:90px;border-bottom:4px solid #fff;border-radius:50%;transform:rotate(-5deg);margin-top:10px}
+.hero-hello{position:absolute;left:var(--page-pad);bottom:110px;z-index:3;font:26px/1.1 'David Hand',cursive;color:white;transform:rotate(-9deg);pointer-events:none}
+.hero-scroll{position:absolute;left:50%;transform:translateX(-50%);bottom:36px;z-index:5;font-size:10px;text-transform:uppercase;letter-spacing:.2em;text-align:center;padding:12px 14px;color:#252544;background:#fff8eee6;border-radius:24px}
+.hero-scroll span{font-size:18px;display:inline-block;margin-left:8px}
+.hero-hint{position:absolute;bottom:66px;right:var(--page-pad);z-index:3;font:22px 'David Hand',cursive;color:#fff;margin:0}
+.hero-noscript{position:absolute;bottom:120px;left:var(--page-pad);max-width:280px;color:white}
+.david-stage{position:fixed;inset:0;overflow:hidden;z-index:2;pointer-events:none}
+.david-traveler{position:absolute;left:0;top:0;width:1024px;height:1536px;pointer-events:none;transform-origin:0 0;will-change:transform}
+.david-traveler[hidden]{display:none}
+.david-traveler canvas{display:block;width:100%;height:100%;position:relative}
+.david-stage.is-pet{z-index:40}
+.david-shadow{position:absolute;width:66%;height:3%;left:18%;bottom:.8%;border-radius:50%;background:radial-gradient(ellipse,#32224655,transparent 68%);opacity:var(--landing,0);transform:scaleX(var(--shadow-scale,1))}
+.assistant-fab{right:max(18px,env(safe-area-inset-right));bottom:max(12px,env(safe-area-inset-bottom));width:132px;height:252px;z-index:41;border-radius:22px;display:block}
+.assistant-fab[hidden]{display:none}
+.assistant-bubble{position:absolute;right:0;bottom:100%;font-size:11px;padding:8px 12px;transition:opacity .2s}
+.assistant-fab:hover .assistant-bubble{background:#fff}
+.assistant-panel{z-index:50;bottom:294px;max-height:calc(100dvh - 314px);display:flex;flex-direction:column;overflow:auto}
+.assistant-panel-header,.assistant-quick,.assistant-form{flex-shrink:0}
+.assistant-messages{min-height:65px;flex:1 1 auto;overscroll-behavior:contain}
+.assistant-form input{min-width:0;font-size:16px}
+.assistant-close{min-width:44px;min-height:44px}
+.assistant-quick button{min-height:36px}
+.assistant-caption{font-size:11px;color:#686373;margin:8px 0 0}
+.guide-without-pet{height:44px;background:#fff;border:1px solid #725cff55;box-shadow:0 8px 24px #25254422}
+.guide-without-pet .assistant-bubble{position:static;border:0;box-shadow:none;background:transparent;white-space:normal}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.transition-one{height:40px;background:#fff8ee}
+/* Preserve the open layout while keeping medium-width columns readable. */
+@media(min-width:961px){.capability-grid article{grid-template-columns:80px minmax(120px,.8fr) minmax(0,1fr);gap:18px}.skills-section,.experience-section{gap:clamp(40px,6vw,100px);grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr)}}
+@media(max-width:760px){
+  .section-intro h2,.next-section h2{font-size:clamp(34px,8.5vw,46px);line-height:1.04;overflow-wrap:break-word}
+  .hero-copy-wrap{top:100px;left:24px;right:24px;width:auto;max-width:none;text-align:center}
+  .hero h1{font-size:clamp(50px,15vw,78px);line-height:.95;letter-spacing:-.04em}
+  .hero h1 br{display:none}
+  .hero h1 span{display:block}
+  .hero-name{font-size:14px;margin-top:12px;letter-spacing:.04em}
+  .hero-crown,.hero-underline,.hero-hello,.hero-hint{display:none}
+  .hero-scroll{bottom:24px;white-space:nowrap}
+  .hero{min-height:640px;height:100svh;background:radial-gradient(ellipse at 5% 60%,#f9c7a5,transparent 56%),linear-gradient(145deg,#6589ed,#a294d7 70%,#e8becb)}
+  .assistant-fab{width:104px;height:210px;right:12px;bottom:max(10px,env(safe-area-inset-bottom))}
+  .assistant-bubble{display:block;font-size:10px;padding:6px 9px}
+  .assistant-panel{right:12px;bottom:246px;max-height:calc(100dvh - 262px);padding:14px}
+  .site-footer{padding-bottom:170px}
+}
+@media(max-height:580px) and (min-width:761px){.hero{min-height:420px}.hero-copy-wrap{top:22%}.hero h1{font-size:16vh}.hero-name{margin-top:14px}.hero-crown{display:none}.hero-hello{bottom:75px}}
+@media(max-height:600px){.assistant-panel{bottom:12px;right:128px;width:min(390px,calc(100vw - 148px));max-height:calc(100dvh - 24px)}.assistant-quick{gap:4px}.assistant-messages{max-height:120px}}
+@media(max-height:650px) and (max-width:599px){.assistant-panel{left:12px;right:12px;bottom:12px;width:calc(100vw - 24px);max-height:calc(100dvh - 24px)}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.david-traveler{will-change:auto}.assistant-bubble{transition:none}.project-row:hover{transform:none}}
+.assistant-fab.guide-without-pet{height:44px}
